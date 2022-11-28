@@ -2,30 +2,30 @@ import compact from "./../lib-to-test/src/compact.js"
 import { expect } from "chai"
 
 describe("compact.js -class", () => {
-    // it("Removes false", () => {
-    //     expect(compact([1, 2, false])).to.deep.equal([1, 2])
-    // })
-    // it("Removes false", () => {
-    //     expect(compact([false, 2, false])).to.deep.equal([2])
-    // })
-    // it("Removes 0", () => {
-    //     expect( compact([3, 4, 0])).to.deep.equal([3, 4])
-    // })
-    // it("Removes null", () => {
-    //     expect( compact([5, 6, null])).to.deep.equal([5, 6])
-    // })
-    // it("Removes empty string", () => {
-    //     expect( compact([7, 8, ""])).to.deep.equal([7, 8])
-    // })
-    // it("Removes NaN", () => {
-    //     expect( compact([9, 10, NaN])).to.deep.equal([9, 10])
-    // })
-    // it("Removes undefined", () => {
-    //     expect( compact([-1, -2, undefined])).to.deep.equal([-1, -2])
-    // })
-    // it("Doesn't remove numbers if not needed", () => {
-    //     expect( compact([-1, -2, 1, 2, 79996, "asd"])).to.deep.equal([-1, -2, 1, 2, 79996, "asd"])
-    // })
+    it("Removes false", () => {
+        expect(compact([1, 2, false])).to.deep.equal([1, 2])
+    })
+    it("Removes false", () => {
+        expect(compact([false, 2, false])).to.deep.equal([2])
+    })
+    it("Removes 0", () => {
+        expect( compact([3, 4, 0])).to.deep.equal([3, 4])
+    })
+    it("Removes null", () => {
+        expect( compact([5, 6, null])).to.deep.equal([5, 6])
+    })
+    it("Removes empty string", () => {
+        expect( compact([7, 8, ""])).to.deep.equal([7, 8])
+    })
+    it("Removes NaN", () => {
+        expect( compact([9, 10, NaN])).to.deep.equal([9, 10])
+    })
+    it("Removes undefined", () => {
+        expect( compact([-1, -2, undefined])).to.deep.equal([-1, -2])
+    })
+    it("Doesn't remove numbers if not needed", () => {
+        expect( compact([-1, -2, 1, 2, 79996, "asd"])).to.deep.equal([-1, -2, 1, 2, 79996, "asd"])
+    })
     it("Throws a type error if input is not a list", () => {
         expect(() => compact(52)).to.throw(TypeError)
     })
@@ -113,18 +113,18 @@ describe("isEmpty.js", () => {
 import chunk from "./../lib-to-test/src/chunk.js"
 // chunk.js
 describe("chunk.js", () => {
-    // it("Splits even chunks evenly (9/3)", () => {
-    //     expect(chunk("123456789", 3)).to.deep.equal(["123", "456", "789"])
-    // })
-    // it("Splits uneven chunks (10/3)", () => {
-    //     expect(chunk("1234567890", 3)).to.deep.equal(["123", "456", "789", "0"])
-    // })
-    // it("Does not chunk numbers", () => {
-    //     expect(chunk(123456)).to.deep.equal(123456)
-    // })
-    // it("Chunks array of words numbers", () => {
-    //     expect(chunk(["cats", "dogs", "cats1", "and", "dogs2"], 2)).to.deep.equal([["cats", "dogs"], ["cats1", "and"], ["dogs2"]])
-    // })
+    it("Splits even chunks evenly (9/3)", () => {
+        expect(chunk("123456789", 3)).to.deep.equal(["123", "456", "789"])
+    })
+    it("Splits uneven chunks (10/3)", () => {
+        expect(chunk("1234567890", 3)).to.deep.equal(["123", "456", "789", "0"])
+    })
+    it("Does not chunk numbers", () => {
+        expect(chunk(123456)).to.deep.equal(123456)
+    })
+    it("Chunks array of words numbers", () => {
+        expect(chunk(["cats", "dogs", "cats1", "and", "dogs2"], 2)).to.deep.equal([["cats", "dogs"], ["cats1", "and"], ["dogs2"]])
+    })
     it("Returns an empty array from a null value", () => {
         expect(chunk(null, 3)).to.deep.equal([])
     })
