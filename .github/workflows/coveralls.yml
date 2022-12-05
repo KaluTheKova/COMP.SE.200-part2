@@ -19,9 +19,6 @@ jobs:
       - name: Install npm dependencies
         run: npm install # switch to `npm ci` when Node.js 6 support is dropped
 
-      - name: Run lint
-        run: npm run lint
-
       - name: Run tests
         run: npm run test-cov
 
@@ -30,14 +27,3 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: ${{matrix.os}}-node-${{ matrix.node }}
-          parallel: true
-
-  finish:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
