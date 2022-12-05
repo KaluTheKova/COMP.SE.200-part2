@@ -34,3 +34,25 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run tests
         run: npm test
+
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: ${{matrix.os}}-node-${{matrix.node}}
+          parallel: true
+
+  finish: 
+    needs: test
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
