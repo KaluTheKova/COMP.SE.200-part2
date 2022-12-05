@@ -1,4 +1,7 @@
 {
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
     "chai": "^4.3.6",
     "js-yaml": "^3.13.1",
