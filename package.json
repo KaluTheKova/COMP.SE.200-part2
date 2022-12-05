@@ -14,7 +14,7 @@
     "nyc": "^14.1.1"
   },
   "scripts": {
-    "test": "npm run mocha",
+    "test": "mocha",
     "test-cov": "nyc npm run mocha",
     "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
     "mocha": "_mocha -b -R spec"
