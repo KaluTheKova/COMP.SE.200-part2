@@ -1,15 +1,6 @@
 import compact from "./../lib-to-test/src/compact.js" 
 import { expect } from "chai"
 
-// compact.js 
-describe("Testing chai:", () => {
-    it("1=1:", ()=>{
-        expect(1).to.equal(1)
-    })
-    it("[1, 2] === [1, 2]:", ()=>{
-        expect([1, 2]).to.deep.equal([1, 2])
-    })
-})
 describe("compact.js -class", () => {
     it("Removes false", () => {
         expect(compact([1, 2, false])).to.deep.equal([1, 2])
