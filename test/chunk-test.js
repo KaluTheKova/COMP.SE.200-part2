@@ -2,7 +2,7 @@ import { expect } from "chai"
 import chunk from "./../lib-to-test/src/chunk.js"
 
 // chunk.js
-describe("chunk.js", () => {
+describe("chunk.js Creates an array of elements split into groups the length of `size`. If `array` can't be split evenly, the final chunk will be the remaining elements.", () => {
     it("Splits even chunks evenly (9/3)", () => {
         expect(chunk("123456789", 3)).to.deep.equal(["123", "456", "789"])
     })

@@ -2,7 +2,7 @@ import { expect } from "chai"
 import get from "./../lib-to-test/src/get.js"
 
 // get.js
-describe("get.js ", () => {
+describe("get.js Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.", () => {
     it("Gets from a table", () => {
         expect( get({a: [1, 2], b: "B", c: 3}, "a[0]")).to.deep.equal(1)
     })

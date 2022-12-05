@@ -1,7 +1,7 @@
 import { expect } from "chai"
 import compact from "./../lib-to-test/src/compact.js" 
 
-describe("compact.js -class", () => {
+describe("compact.js Creates an array with all falsey values removed. The values `false`, `null`, `0`, `\"\"`, `undefined`, and `NaN` are falsey", () => {
     it("Removes false", () => {
         expect(compact([1, 2, false])).to.deep.equal([1, 2])
     })

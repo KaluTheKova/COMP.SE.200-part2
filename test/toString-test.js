@@ -2,7 +2,7 @@ import toString from "./../lib-to-test/src/toString.js";
 import { expect } from "chai";
 
 // toString.js
-describe("toString.js converts `value` to a string", function() {
+describe("toString.js Converts `value` to a string. An empty string is returned for `null` and `undefined` values. The sign of `-0` is preserved.", function() {
     it("Converts 3.2 to a string", function() {
         var query1 = toString(3.2)
   

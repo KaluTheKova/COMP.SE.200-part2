@@ -2,7 +2,7 @@ import { expect } from "chai"
 import endsWith from "./../lib-to-test/src/endsWith.js" 
 
 // endsWith.js
-describe("endsWith.js ", () => {
+describe("endsWith.js Checks if `string` ends with the given target string.", () => {
     it("Finds the correct ending", () => {
         expect( endsWith("kissatkoiria", "koiria")).to.deep.equal(true)
         expect( endsWith("kissatkoiria", "kissat")).to.deep.equal(false)

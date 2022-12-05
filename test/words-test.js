@@ -2,7 +2,7 @@ import words from "./../lib-to-test/src/words.js";
 import { expect } from "chai";
 
 // words.js
-describe("words.js splits `string` into an array of its words", function() {
+describe("words.js Splits `string` into an array of its words", function() {
     it("Splits string into an array of its words.", function() {
         var query1 = words("Mustard green wall carpet")
         var query2 = words("Mustardgreenwallcarpet")

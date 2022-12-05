@@ -2,7 +2,7 @@ import toNumber from "./../lib-to-test/src/toNumber.js";
 import { expect } from "chai";
 
 // toNumber.js
-describe("toNumber.js converts value to a number", function() {
+describe("toNumber.js Converts value to a number", function() {
     it("Converts a string to a number", function() {
         var query1 = toNumber("3.2")
 
