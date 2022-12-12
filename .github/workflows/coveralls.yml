@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 10.x
 
-    - name: npm install, npm tun test-coverage
+    - name: npm install, npm run test-coverage
       if: always()
       run: |
         npm install
