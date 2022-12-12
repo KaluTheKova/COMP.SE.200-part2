@@ -21,7 +21,7 @@ jobs:
 
       - name: Run tests
         if: always()
-        run: nyc npm test && nyc report --reporter=text-lcov | coveralls
+        run: nyc --reporter=lcov --reporter=text-lcov npm test
 
       - name: Coveralls
         if: always()
