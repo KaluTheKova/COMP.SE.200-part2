@@ -15,10 +15,10 @@
     "nyc": "^14.1.1"
   },
   "scripts": {
-    "test": "mocha --exit",
-    "test-cov": "nyc npm run mocha",
-    "test-coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
-    "mocha": "_mocha -b -R spec"
+    "test": "mocha",
+    "test-cov": "c8 npm test",
+    "test-coveralls": "c8 --reporter=lcov npm test && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
+    "mocha": "c8 npm test"
   },
   "type": "module"
 }
