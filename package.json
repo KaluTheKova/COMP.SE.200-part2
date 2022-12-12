@@ -15,9 +15,9 @@
   },
   "scripts": {
     "test": "mocha",
-    "test-cov": "nyc npm run mocha",
-    "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
-    "mocha": "_mocha -b -R spec"
+    "test-cov": "c8 npm test",
+    "test-coveralls": "c8 --reporter=lcov npm test && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
+    "mocha": "c8 npm test"
   },
   "type": "module"
 }
