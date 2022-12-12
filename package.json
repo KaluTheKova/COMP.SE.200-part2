@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "chai": "^4.3.6",
+    "jest": "^29.3.1",
     "js-yaml": "^3.13.1",
     "lcov-parse": "^1.0.0"
   },

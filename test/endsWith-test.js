@@ -3,13 +3,13 @@ import endsWith from "./../lib-to-test/src/endsWith.js"
 
 // endsWith.js
 describe("endsWith.js Checks if `string` ends with the given target string.", () => {
-    it("Finds the correct ending", () => {
-        expect( endsWith("kissatkoiria", "koiria")).to.deep.equal(true)
-        expect( endsWith("kissatkoiria", "kissat")).to.deep.equal(false)
+    it("If position < 0, expect empty string", () => {
+        expect( endsWith("kissatkoiria", "", -8)).to.deep.equal(true)
+        expect( endsWith("kissatkoiria", "kissat", -8)).to.deep.equal(false)
     })
-    it("Finds the correct ending with a parameter", () => {
-        expect( endsWith("kissatkoiria", "koiria", 12)).to.deep.equal(true)
-        expect( endsWith("kissatkoiria", "kissat", 12)).to.deep.equal(false)
+    it("if position > length, expect the whole word", () => {
+        expect( endsWith("kissatkoiria", "koiria", 22)).to.deep.equal(true)
+        expect( endsWith("kissatkoiria", "kissat", 22)).to.deep.equal(false)
     })
     it("Finds the correct ending with a parameter from middle of the line", () => {
         expect( endsWith("kissatkoiria", "koiria", 6)).to.deep.equal(false)
