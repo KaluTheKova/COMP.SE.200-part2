@@ -22,4 +22,16 @@ describe("toString.js Converts `value` to a string. An empty string is returned 
   
         expect(query1).to.deep.equal(answer1)
     });
+    it("Checks if value is already string", function() {
+        var query1 = toString(typeof string)
+
+        const answer1 = typeof string
+        expect(query1).to.deep.equal(answer1)
+    });
+    it("Checks if value is symbol", function() {
+        var query1 = toString(Symbol('a'))
+
+        const answer1 = 'Symbol(a)'
+        expect(query1).to.equal(answer1)
+    });
 });

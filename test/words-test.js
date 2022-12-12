@@ -35,4 +35,10 @@ describe("words.js Splits `string` into an array of its words", function() {
         expect(query1).to.deep.equal(answer1)
         expect(query2).to.deep.equal(answer2)
     });
+    it("Returns empty pattern for empty string", function() {
+        var query1 = words("")
+        const answer1 = []
+  
+        expect(query1).to.deep.equal(answer1)
+    });
 });

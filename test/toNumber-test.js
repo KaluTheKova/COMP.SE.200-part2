@@ -30,4 +30,22 @@ describe("toNumber.js Converts value to a number", function() {
   
         expect(query1).to.deep.equal(answer1)
     });
+    it("Returns NaN if value is symbol", function() {
+        var query1 = toNumber(Symbol('a'))
+
+        const answer1 = NaN
+        expect(query1).to.deep.equal(answer1)
+    });
+    it("Returns NaN is object", function() {
+        var query1 = toNumber({kissa:"koira"})
+
+        const answer1 = NaN
+        expect(query1).to.deep.equal(answer1)
+    });
+    it("Returns NaN if value is not a string", function() {
+        var query1 = toNumber(undefined)
+
+        const answer1 = NaN
+        expect(query1).to.deep.equal(answer1)
+    });
 });
