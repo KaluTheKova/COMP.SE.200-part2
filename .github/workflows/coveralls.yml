@@ -21,7 +21,7 @@ jobs:
 
       - name: Run tests
         if: always()
-        run: nyc --reporter=lcov --reporter=text-lcov npm test
+        run: c8 --reporter=lcov npm test
 
       - name: Coveralls
         if: always()
@@ -29,7 +29,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: ${{matrix.os}}-node-${{ matrix.node }}
-          path-to-lcov: coverage/lcov.info
           #parallel: true
 
   finish:
@@ -40,5 +39,4 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: coverage/lcov.info
           #parallel-finished: true
