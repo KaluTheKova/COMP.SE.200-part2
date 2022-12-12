@@ -8,23 +8,37 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
 
-    - uses: actions/checkout@v1
+      - name: Set Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
 
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
+      - name: Install npm dependencies
+        run: npm install # switch to `npm ci` when Node.js 6 support is dropped
 
-    - name: npm install, npm run test-coverage
-      if: always()
-      run: |
-        npm install
-        npm i -g nyc
-        npm i -g mocha
-        npm run test-coveralls
+      - name: Run tests
+        if: always()
+        run: nyc --reporter=lcov --reporter=text-lcov npm test
 
-    - name: Publish to coveralls.io
-      uses: coverallsapp/github-action@v1.1.2
-      with:
-        github-token: ${{ github.token }}
+      - name: Coveralls
+        if: always()
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: ${{matrix.os}}-node-${{ matrix.node }}
+          path-to-lcov: coverage/lcov.info
+          #parallel: true
+
+  finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage/lcov.info
+          #parallel-finished: true
