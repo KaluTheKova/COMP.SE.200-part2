@@ -4,7 +4,7 @@
 
 'use strict';
 
-const { handleInput } = require('..');
+import { handleInput } from '..';
 
 process.stdin.resume();
 process.stdin.setEncoding('utf8');

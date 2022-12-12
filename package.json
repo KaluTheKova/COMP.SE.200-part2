@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "chai": "^4.3.6",
+    "jest": "^29.3.1",
     "js-yaml": "^3.13.1",
     "lcov-parse": "^1.0.0"
   },
@@ -14,9 +15,9 @@
     "nyc": "^14.1.1"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --exit",
     "test-cov": "nyc npm run mocha",
-    "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
+    "test-coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
     "mocha": "_mocha -b -R spec"
   },
   "type": "module"
