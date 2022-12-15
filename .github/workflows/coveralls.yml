@@ -24,7 +24,7 @@ jobs:
 
       - name: Run tests
         if: always()
-        run: c8 --exclude  "lib-to-test/src/isArguments.js" --exclude "lib-to-test/src/isArrayLike.js" --exclude "lib-to-test/src/isBuffer.js" --exclude "lib-to-test/src/isLength.js" --exclude "lib-to-test/src/isObject.js" --exclude "lib-to-test/src/isObjectLike.js" --exclude "lib-to-test/src/isSymbol.js" --exclude "lib-to-test/src/isTypedArray.js" --exclude "lib-to-test/src/memoize.js" --exclude "lib-to-test/src/slice.js" --exclude "lib-to-test/src/toFinite.js" --exclude "lib-to-test/src/toInteger.js" --reporter=lcov npm test
+        run: c8 --exclude  "lib-to-test/src/isArguments.js" --exclude "lib-to-test/src/isArrayLike.js" --exclude "lib-to-test/src/isBuffer.js" --exclude "lib-to-test/src/isLength.js" --exclude "lib-to-test/src/isObject.js" --exclude "lib-to-test/src/isObjectLike.js" --exclude "lib-to-test/src/isSymbol.js" --exclude "lib-to-test/src/isTypedArray.js" --exclude "lib-to-test/src/memoize.js" --exclude "lib-to-test/src/slice.js" --exclude "lib-to-test/src/toFinite.js" --exclude "lib-to-test/src/toInteger.js" --exclude "lib-to-test/src/.internal/" --exclude "test/" --reporter=lcov npm test
 
       - name: Coveralls
         if: always()
