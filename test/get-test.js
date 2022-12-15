@@ -24,4 +24,7 @@ describe("get.js Gets the value at `path` of `object`. If the resolved value is 
     it("Returns undefined for invalid get path and undefined parameter", () => {
         expect( get({a: [1, 2], b: "B", c: 3}, "a.b.c.d[5]")).to.deep.equal(undefined)
     })
+    it("Returns undefined for null paramaeters", ()=>{
+        expect(get({a: null, b: null, c: null})).to.deep.equal(undefined)
+    })
 })
